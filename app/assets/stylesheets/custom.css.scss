@@ -97,6 +97,11 @@ input, textarea, select, .uneditable-input {
   margin-bottom: 15px;
 }
 
+#checkbox {
+	display: block;
+	margin-bottom: 15px;
+}
+
 #error_explanation {
   color: #f00;
   ul {
@@ -108,4 +113,37 @@ input, textarea, select, .uneditable-input {
 .field_with_errors {
   @extend .control-group;
   @extend .error;
+}
+
+/* horizontal description */
+
+dt, dd {
+	margin-bottom: 15px;	
+}
+
+/* datatables */
+
+.dataTables_length label {
+	float: left;
+	text-align: left;
+	width: 190px;
+}
+
+div.dataTables_length select {
+	width: 75px;
+}
+
+.dataTables_filter label {
+	float: right;
+	width: 254px;
+}
+
+.dataTables_filter input {
+	width: 186px;
+}
+
+/* fix first column */
+
+tr.even td.sorting_1 {
+	background-color: white;
 }

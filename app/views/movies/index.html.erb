@@ -1,0 +1,22 @@
+<% provide(:title, 'Movies') %>
+<h1>Movies</h1>
+
+<table id="movies" class="table table-striped table-bordered" data-source="<%= movies_url(format: "json") %>">
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Year</th>
+			<th>Rating</th>
+			<th>Resolution</th>
+			<th>Genre</th>
+			<th>Watched</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+	</tbody>
+</table>
+
+<% if signed_in? %>
+<%= link_to 'Create new movie', new_movie_path, class: "btn btn-large btn-primary" %>
+<% end %>

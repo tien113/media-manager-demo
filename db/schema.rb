@@ -11,7 +11,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121012145453) do
+ActiveRecord::Schema.define(:version => 20121012174650) do
+
+  create_table "movies", :force => true do |t|
+    t.string   "title"
+    t.string   "original_title"
+    t.integer  "year"
+    t.decimal  "rating",         :precision => 2, :scale => 1
+    t.string   "resolution"
+    t.string   "genre"
+    t.boolean  "watched"
+    t.string   "imdb_url"
+    t.string   "image_url"
+    t.datetime "created_at",                                   :null => false
+    t.datetime "updated_at",                                   :null => false
+  end
+
+  add_index "movies", ["genre"], :name => "index_movies_on_genre"
+  add_index "movies", ["original_title"], :name => "index_movies_on_original_title"
+  add_index "movies", ["title"], :name => "index_movies_on_title"
 
   create_table "users", :force => true do |t|
     t.string   "name"

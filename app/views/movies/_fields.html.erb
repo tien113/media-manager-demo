@@ -1,0 +1,29 @@
+<%= render 'shared/error_messages', object: f.object %>
+		
+<%= f.label :title, "Title" %>
+<%= f.text_field :title %>
+
+<%= f.label :original_title, "Original Title" %>
+<%= f.text_field :original_title %>
+			
+<%= f.label :year, "Year" %>
+<%= f.text_field :year %>
+		    
+<%= f.label :rating, "Rating" %>
+<%= f.text_field :rating %>
+
+<%= f.label :resolution, "Resolution" %>
+<%= f.text_field :resolution %>
+		    
+<%= f.label :genre, "Genre" %>
+<%= f.text_field :genre %>
+
+<%= f.label :imdb_url, "IMDb URL" %>
+<%= f.text_field :imdb_url %>
+		    
+<%= f.label :image_url, "Image URL" %>
+<%= f.text_field :image_url %>
+
+<%= f.label :watched, "Watched" %>
+<%= f.check_box :watched, id: "checkbox" %>
+
