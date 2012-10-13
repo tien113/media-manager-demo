@@ -10,8 +10,10 @@
 			<dt>Title</dt>
 			<dd><%= @movie.title %></dd>
 			
+		<% if @movie.original_title != "" %>
 			<dt>Original Title</dt>
 			<dd><%= @movie.original_title %></dd>
+		<% end %>
 			
 			<dt>Year</dt>
 			<dd><%= @movie.year %></dd>
@@ -33,8 +35,10 @@
 			<dt>Image URL</dt>
 			<dd><%= truncate(@movie.image_url, :length => 40)  %></dd>
 			
+		<% if @movie.storage != "" %>
 			<dt>Storage</dt>
 			<dd><%= @movie.storage %></dd>
+		<% end %>
 			
 			<dt>Watched</dt>
 			<dd><%= check_box_tag '', '', @movie.watched, disabled: true %></dd>			
