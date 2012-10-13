@@ -19,9 +19,11 @@
 			<dt>Rating</dt>
 			<dd><%=  number_with_precision(@movie.rating, :precision => 1) %></dd>
 			
+		<% if @movie.resolution != "" %>
 			<dt>Resolution</dt>
 			<dd><%= @movie.resolution %></dd>
-			
+		<% end %>
+		
 			<dt>Genre</dt>
 			<dd><%= @movie.genre %></dd>
 			

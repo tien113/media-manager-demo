@@ -9,4 +9,8 @@ module ApplicationHelper
     end
   end
   
+  def resolutions
+    %w[720p 1080p]
+  end
+  
 end
