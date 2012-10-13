@@ -7,6 +7,6 @@ jQuery ->
           bProcessing: true
           bServerSide: true
           sAjaxSource: $('#movies').data('source') 
-          aoColumnDefs: [bSortable: false, aTargets: [6]]
+          aoColumnDefs: [bSortable: false, aTargets: [7]]
           oLanguage:
             sLengthMenu: "_MENU_ records per page"

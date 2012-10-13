@@ -8,6 +8,7 @@ class CreateMovies < ActiveRecord::Migration
       t.string  :resolution
       t.string  :genre
       t.boolean :watched, default: false
+      t.string  :storage
       t.string  :imdb_url
       t.string  :image_url
 
@@ -17,5 +18,6 @@ class CreateMovies < ActiveRecord::Migration
     add_index :movies, :title
     add_index :movies, :original_title
     add_index :movies, :genre
+    add_index :movies, :storage
   end
 end

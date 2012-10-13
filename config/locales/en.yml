@@ -6,4 +6,6 @@ en:
     attributes:
       user:
         password_digest: "Password"
-
+      movie:
+        imdb_url: "IMDb URL"
+        image_url: "Image URL"

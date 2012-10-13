@@ -20,15 +20,17 @@ ActiveRecord::Schema.define(:version => 20121012174650) do
     t.decimal  "rating",         :precision => 2, :scale => 1
     t.string   "resolution"
     t.string   "genre"
-    t.boolean  "watched"
+    t.boolean  "watched",                                      :default => false
+    t.string   "storage"
     t.string   "imdb_url"
     t.string   "image_url"
-    t.datetime "created_at",                                   :null => false
-    t.datetime "updated_at",                                   :null => false
+    t.datetime "created_at",                                                      :null => false
+    t.datetime "updated_at",                                                      :null => false
   end
 
   add_index "movies", ["genre"], :name => "index_movies_on_genre"
   add_index "movies", ["original_title"], :name => "index_movies_on_original_title"
+  add_index "movies", ["storage"], :name => "index_movies_on_storage"
   add_index "movies", ["title"], :name => "index_movies_on_title"
 
   create_table "users", :force => true do |t|

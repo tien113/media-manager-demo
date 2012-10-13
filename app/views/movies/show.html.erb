@@ -26,10 +26,13 @@
 			<dd><%= @movie.genre %></dd>
 			
 			<dt>IMDb URL</dt>
-			<dd><%= @movie.imdb_url %></dd>
+			<dd><a href="<%= @movie.imdb_url %>"/><%= @movie.imdb_url %></a></dd>
 			
 			<dt>Image URL</dt>
 			<dd><%= truncate(@movie.image_url, :length => 40)  %></dd>
+			
+			<dt>Storage</dt>
+			<dd><%= @movie.storage %></dd>
 			
 			<dt>Watched</dt>
 			<dd><%= check_box_tag '', '', @movie.watched, disabled: true %></dd>			

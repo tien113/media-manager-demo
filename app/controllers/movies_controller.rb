@@ -32,8 +32,7 @@ class MoviesController < ApplicationController
   end
   
   def create
-    @movie = Movie.new(params[:movie]) # create the food with food data
-    
+    @movie = Movie.new(params[:movie])
     if @movie.save
       redirect_to @movie
       flash[:success] = "Movie was successfully created."

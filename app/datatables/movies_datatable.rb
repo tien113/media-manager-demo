@@ -25,6 +25,7 @@ private
         number_with_precision(movie.rating, :precision => 1) ,
         h(movie.resolution),
         h(movie.genre),
+        h(movie.storage),
         check_box_tag('', '', movie.watched, disabled: true),
         link_to('S', movie, class: "btn btn-small btn-info") + ' ' +
         link_to('E', edit_movie_path(movie), class: "btn btn-small btn btn-warning") + ' ' +
