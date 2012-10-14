@@ -56,7 +56,7 @@ private
   end
   
   def sort_column
-    columns = %w[title year rating resolution genre watched]
+    columns = %w[title year rating resolution genre storage]
     columns[params[:iSortCol_0].to_i]
   end
   
