@@ -3,7 +3,7 @@
 
 <div class="row-fluid">
 	<div class="span6">
-		<%= image_tag(@movie.image_url, { class: 'img-polaroid', width: '350' }) %>
+		<%= image_tag(@movie.image_url, { class: 'img-polaroid', width: '350', alt: @movie.title }) %>
 	</div>
 	<div class="span6">
 		<dl class="dl-horizontal">
