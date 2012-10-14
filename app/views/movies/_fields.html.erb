@@ -11,9 +11,6 @@
 		    
 <%= f.label :rating, "Rating" %>
 <%= f.text_field :rating, autocomplete: :off %>
-
-<%= f.label :resolution, "Resolution" %>
-<%= f.select(:resolution, resolutions, { include_blank: true }) %>
 		    
 <%= f.label :genre, "Genre" %>
 <%= f.text_field :genre, autocomplete: :off %>
@@ -26,6 +23,9 @@
 
 <%= f.label :storage, "Storage" %>
 <%= f.text_field :storage %>
+
+<%= f.label :resolution, "Resolution" %>
+<%= f.select(:resolution, resolutions, { include_blank: true }, { id: 'collection-select' }) %>
 
 <%= f.label :watched, "Watched" %>
 <%= f.check_box :watched, id: "checkbox" %>

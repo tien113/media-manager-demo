@@ -20,11 +20,6 @@
 			
 			<dt>Rating</dt>
 			<dd><%= number_with_precision(@movie.rating, :precision => 1) %></dd>
-			
-		<% if @movie.resolution != "" %>
-			<dt>Resolution</dt>
-			<dd><%= @movie.resolution %></dd>
-		<% end %>
 		
 			<dt>Genre</dt>
 			<dd><%= @movie.genre %></dd>
@@ -34,6 +29,11 @@
 			
 			<dt>Image URL</dt>
 			<dd><%= truncate(@movie.image_url, :length => 40)  %></dd>
+			
+		<% if @movie.resolution != "" %>
+			<dt>Resolution</dt>
+			<dd><%= @movie.resolution %></dd>
+		<% end %>
 			
 		<% if @movie.storage != "" %>
 			<dt>Storage</dt>
