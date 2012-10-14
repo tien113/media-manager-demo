@@ -3,6 +3,7 @@ jQuery ->
           sDom: "<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>"
           sWrapper: "dataTables_wrapper form-inline"
           sPaginationType: "bootstrap"
+          iDisplayLength: 50
           bJQueryUI: false
           bProcessing: true
           bServerSide: true

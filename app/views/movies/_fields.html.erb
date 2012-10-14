@@ -10,7 +10,7 @@
 <%= f.text_field :year %>
 		    
 <%= f.label :rating, "Rating" %>
-<%= f.text_field :rating %>
+<%= f.text_field :rating, autocomplete: :off %>
 
 <%= f.label :resolution, "Resolution" %>
 <%= f.select(:resolution, resolutions, { include_blank: true }) %>
