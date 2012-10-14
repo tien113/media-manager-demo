@@ -20,14 +20,13 @@ private
   def data
     movies.map do |movie|
       [
-        h(movie.title),
+        link_to(movie.title, movie),
         h(movie.year),
         number_with_precision(movie.rating, :precision => 1) ,
         h(movie.resolution),
         h(movie.genre),
         h(movie.storage),
         check_box_tag('', '', movie.watched, disabled: true),
-        link_to('S', movie, class: "btn btn-small btn-info") + ' ' +
         link_to('E', edit_movie_path(movie), class: "btn btn-small btn btn-warning") + ' ' +
         link_to('D', movie, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-small btn-danger")
       ]
