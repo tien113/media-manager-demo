@@ -16,7 +16,7 @@
 <%= f.select(:resolution, resolutions, { include_blank: true }) %>
 		    
 <%= f.label :genre, "Genre" %>
-<%= f.text_field :genre %>
+<%= f.text_field :genre, autocomplete: :off %>
 
 <%= f.label :imdb_url, "IMDb URL" %>
 <%= f.text_field :imdb_url %>
