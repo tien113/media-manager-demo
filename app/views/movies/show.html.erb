@@ -1,9 +1,9 @@
-<% provide(:title, @movie.title) %>
-<h1><%= @movie.title %></h1>
+<% provide(:title, "#{@movie.title} (#{@movie.year})") %>
+<h1><%= "#{@movie.title} (#{@movie.year})" %></h1>
 
 <div class="row-fluid">
 	<div class="span6">
-		<img src="<%= @movie.image_url %>" class="img-polaroid" width="350">
+		<%= image_tag(@movie.image_url, { class: 'img-polaroid', width: '350' }) %>
 	</div>
 	<div class="span6">
 		<dl class="dl-horizontal">
@@ -19,7 +19,7 @@
 			<dd><%= @movie.year %></dd>
 			
 			<dt>Rating</dt>
-			<dd><%=  number_with_precision(@movie.rating, :precision => 1) %></dd>
+			<dd><%= number_with_precision(@movie.rating, :precision => 1) %></dd>
 			
 		<% if @movie.resolution != "" %>
 			<dt>Resolution</dt>
@@ -30,7 +30,7 @@
 			<dd><%= @movie.genre %></dd>
 			
 			<dt>IMDb URL</dt>
-			<dd><a href="<%= @movie.imdb_url %>"/><%= @movie.imdb_url %></a></dd>
+			<dd><%= link_to(@movie.imdb_url, @movie.imdb_url, target: "_blank") %></a></dd>
 			
 			<dt>Image URL</dt>
 			<dd><%= truncate(@movie.image_url, :length => 40)  %></dd>
