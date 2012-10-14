@@ -156,3 +156,12 @@ div.dataTables_length select {
 tr.even td.sorting_1 {
 	background-color: white;
 }
+
+/* title color */
+.title-color {
+	color: $textColor;
+	&:hover {
+		color: $purple;
+		text-decoration: none;
+	};
+}

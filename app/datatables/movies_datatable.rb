@@ -20,7 +20,7 @@ private
   def data
     movies.map do |movie|
       [
-        link_to(movie.title, movie),
+        link_to(movie.title, movie, class: "title-color"),
         h(movie.year),
         number_with_precision(movie.rating, :precision => 1) ,
         h(movie.resolution),
@@ -41,7 +41,7 @@ private
     movies = Movie.order("#{sort_column} #{sort_direction}")
     movies = movies.page(page).per_page(per_page)
     if params[:sSearch].present?
-      movies = movies.where("title like :search or genre like :search or storage like :searh", search: "%#{params[:sSearch]}%")
+      movies = movies.where("title like :search or genre like :search", search: "%#{params[:sSearch]}%")
     end
     movies   
   end
