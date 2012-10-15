@@ -4,6 +4,8 @@ class MoviesDatatable
   
   def initialize(view)
     @view = view
+    db_adapter = ActiveRecord::Base.configurations[Rails.env]['adapter']
+    @search_query_method = db_adapter == 'postgresql' ? 'ILIKE' : 'LIKE'
   end
   
   def as_json(options = {})
@@ -33,6 +35,10 @@ private
     end
   end
   
+  def searchable_columns
+    c = %w[title genre]
+  end
+  
   def movies
     @movies ||= fetch_movies
   end
@@ -41,7 +47,10 @@ private
     movies = Movie.order("#{sort_column} #{sort_direction}")
     movies = movies.page(page).per_page(per_page)
     if params[:sSearch].present?
-      movies = movies.where("title like :search or genre like :search", search: "%#{params[:sSearch]}%")
+      query = searchable_columns.map do |column|
+        "#{column} #{@search_query_method} :search"
+      end.join(" OR ")
+      movies = movies.where(query, search: "%#{params[:sSearch]}%")
     end
     movies   
   end
