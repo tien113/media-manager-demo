@@ -46,7 +46,7 @@ private
     movies = movies.page(page).per_page(per_page)
     if params[:sSearch].present?
       query = searchable_columns.map do |column|
-        "#{column} LIKE :search"
+        "#{column} ILIKE :search"
       end.join(" OR ")
       movies = movies.where(query, search: "%#{params[:sSearch]}%")
     end

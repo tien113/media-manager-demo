@@ -8,7 +8,7 @@ gem 'bootstrap-will_paginate', '0.0.9'
 gem "validates_phone_number", '2.0.0'
 
 group :development, :test do
-  gem 'sqlite3','1.3.6'
+  gem 'pg', '0.14.1'
 end
 
 group :assets do
