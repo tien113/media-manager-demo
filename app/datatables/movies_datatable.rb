@@ -5,7 +5,7 @@ class MoviesDatatable
   def initialize(view)
     @view = view
     db_adapter = ActiveRecord::Base.configurations[Rails.env]['adapter']
-    @search_query_method = db_adapter == 'postgresql' ? 'ILIKE' : 'LIKE'
+    @search_query_method = db_adapter == 'postgresql' ? 'ilike' : 'like'
   end
   
   def as_json(options = {})
