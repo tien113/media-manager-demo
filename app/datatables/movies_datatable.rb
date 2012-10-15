@@ -41,7 +41,7 @@ private
     movies = Movie.order("#{sort_column} #{sort_direction}")
     movies = movies.page(page).per_page(per_page)
     if params[:sSearch].present?
-      movies = movies.where("title like :search or genre like :search", search: "%#{params[:sSearch].downcase}%")
+      movies = movies.where("title like :search or genre like :search", search: "%#{params[:sSearch]}%")
       
       # postgres search case insensitive
       # movies = movies.where("title ilike :search or genre ilike :search", search: "%#{params[:sSearch]}%")
