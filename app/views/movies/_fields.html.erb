@@ -24,9 +24,9 @@
 <%= f.label :storage, "Storage" %>
 <%= f.text_field :storage %>
 
-<%= f.label :resolution, "Resolution" %>
-<%= f.select(:resolution, resolutions, { include_blank: true }, { id: 'collection-select' }) %>
+<%= f.select(:resolution, resolutions, { prompt: "Select Resolution" }, { class: "span3" }) %>
 
-<%= f.label :watched, "Watched" %>
-<%= f.check_box :watched, id: "checkbox" %>
+<%= f.label :watched, class: "checkbox" do %>
+	<%= f.check_box :watched %> Watched
+<% end %>
 
