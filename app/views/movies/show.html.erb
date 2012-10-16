@@ -41,8 +41,14 @@
 		<% end %>
 			
 			<dt>Watched</dt>
-			<dd><%= check_box_tag '', '', @movie.watched, disabled: true %></dd>			
+			<dd>
+				<% if @movie.watched == true %>
+					<%= label_tag 'Yes' %>
+				<% else %>
+					<%= label_tag 'No' %>
+				<% end %>
+			</dd>			
 		</dl>
-		<%= link_to 'Edit', edit_movie_path(@movie), class: "btn btn-large btn-primary" %>
+		<%= link_to 'Edit', edit_movie_path(@movie), class: "btn btn-primary" %>
 	</div>
 </div>
