@@ -133,17 +133,13 @@ dt, dd {
 	width: 190px;
 }
 
-div.dataTables_length select {
+.dataTables_length select {
 	width: 75px;
 }
 
-.dataTables_filter label {
-	float: right;
-	width: 254px;
-}
-
 .dataTables_filter input {
-	width: 186px;
+	@extend .input-medium;
+	@extend .search-query;
 }
 
 /* fix first column */
