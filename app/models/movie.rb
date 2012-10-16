@@ -5,6 +5,7 @@ class Movie < ActiveRecord::Base
   before_save { self.title.strip! }
   before_save { self.original_title.strip! }                
   before_save { self.genre.strip! }
+  before_save { self.imdb_url.downcase! }
   
   validates :title            , length: 1..100, 
                                 uniqueness: { case_sensitive: true }
@@ -13,7 +14,8 @@ class Movie < ActiveRecord::Base
   validates :rating           , numericality: true, length: 1..3
   validates :resolution       , length: 0..100
   validates :genre            , length: 1..100
-  validates :imdb_url         , length: 1..100
+  validates :imdb_url         , length: 1..100, 
+                                uniqueness: { case_sensitive: false }
   validates :image_url        , length: 1..255
   validates :storage          , length: 0..15
   

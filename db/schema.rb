@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20121012174650) do
   end
 
   add_index "movies", ["genre"], :name => "index_movies_on_genre"
+  add_index "movies", ["imdb_url"], :name => "index_movies_on_imdb_url", :unique => true
   add_index "movies", ["title"], :name => "index_movies_on_title", :unique => true
 
   create_table "users", :force => true do |t|
