@@ -1,28 +1,20 @@
 <%= render 'shared/error_messages', object: f.object %>
 		
-<%= f.label :title, "Title" %>
-<%= f.text_field :title %>
+<%= f.text_field :title, { placeholder: "Title" } %>
 
-<%= f.label :original_title, "Original Title" %>
-<%= f.text_field :original_title %>
-			
-<%= f.label :year, "Year" %>
-<%= f.text_field :year %>
-		    
-<%= f.label :rating, "Rating" %>
-<%= f.text_field :rating %>
-		    
-<%= f.label :genre, "Genre" %>
-<%= f.text_field :genre %>
+<%= f.text_field :original_title, { placeholder: "Original Title" } %>
 
-<%= f.label :imdb_url, "IMDb URL" %>
-<%= f.text_field :imdb_url %>
-		    
-<%= f.label :image_url, "Image URL" %>
-<%= f.text_field :image_url %>
+<%= f.text_field :year, { placeholder: "Year" } %>
 
-<%= f.label :storage, "Storage" %>
-<%= f.text_field :storage %>
+<%= f.text_field :rating, { placeholder: "Rating" } %>
+
+<%= f.text_field :genre, { placeholder: "Genre" } %>
+
+<%= f.text_field :imdb_url, { placeholder: "IMDb URL" } %>
+
+<%= f.text_field :image_url, { placeholder: "Image URL" } %>
+
+<%= f.text_field :storage, { placeholder: "Storage" } %>
 
 <%= f.select(:resolution, resolutions, { prompt: "Select Resolution" }, { class: "span3" }) %>
 
