@@ -16,7 +16,7 @@
 
 <%= f.text_field :storage, { placeholder: "Storage" } %>
 
-<%= f.select(:resolution, resolutions, { prompt: "Select Resolution" }, { class: "span3" }) %>
+<%= f.select(:resolution, resolutions, { include_blank: true, prompt: "Select Resolution" }, { class: "span3" }) %>
 
 <%= f.label :watched, class: "checkbox" do %>
 	<%= f.check_box :watched %> Watched
