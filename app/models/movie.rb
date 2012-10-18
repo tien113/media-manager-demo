@@ -12,13 +12,13 @@ class Movie < ActiveRecord::Base
   validates :original_title   , length: 0..100
   validates :year             , numericality: true, length: 4..4
   validates :rating           , numericality: true, length: 1..3
-  validates :resolution       , length: 0..100
-  validates :genre            , length: 1..100
-  validates :imdb_url         , length: 1..100,
+  validates :resolution       , length: 0..10
+  validates :genre            , length: 1..40
+  validates :imdb_url         , length: 1..40,
                                 format: URI::regexp(%w(http https)),
                                 uniqueness: { case_sensitive: false }
   validates :image_url        , length: 1..255,
                                 format: URI::regexp(%w(http https))
-  validates :storage          , length: 0..15
+  validates :storage          , length: 0..20
   
 end
