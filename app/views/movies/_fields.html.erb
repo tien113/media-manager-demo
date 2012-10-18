@@ -14,7 +14,7 @@
 
 <%= f.text_field :image_url, { placeholder: "Image URL" } %>
 
-<%= f.text_field :storage, { placeholder: "Storage" } %>
+<%= f.select(:storage, storages, { include_blank: true, prompt: "Select Storage" }, { class: "span4" }) %>
 
 <%= f.select(:resolution, resolutions, { include_blank: true, prompt: "Select Resolution" }, { class: "span3" }) %>
 
