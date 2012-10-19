@@ -2,8 +2,7 @@ class Movie < ActiveRecord::Base
   attr_accessible :genre, :image_url, :imdb_url, :rating, :resolution, 
                   :title, :watched, :year, :storage
   
-  before_save { self.title.strip! }
-  before_save { self.original_title.strip! }                
+  before_save { self.title.strip! }              
   before_save { self.genre.strip! }
   before_save { self.imdb_url.downcase! }
   
