@@ -9,7 +9,6 @@ class Movie < ActiveRecord::Base
   
   validates :title            , length: 1..100, 
                                 uniqueness: { case_sensitive: true }
-  validates :original_title   , length: 0..100
   validates :year             , numericality: true, length: 4..4
   validates :rating           , numericality: true, length: 1..3
   validates :resolution       , length: 0..10
