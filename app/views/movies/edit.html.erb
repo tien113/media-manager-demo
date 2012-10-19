@@ -3,6 +3,10 @@
 
 <div class="row">
 	<div class="span6 offset3">
+		<%= form_tag({ controller: :movies, action: :edit }, method: :get) do %>
+			<%= render 'fetch_field' %>
+		<% end %>
+		
 		<%= form_for(@movie) do |f| %>
 			<%= render 'fields', f: f %>
 		    <%= f.submit "Save changes", class: "btn btn-primary" %>

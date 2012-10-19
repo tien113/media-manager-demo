@@ -3,6 +3,10 @@
 
 <div class="row">
 	<div class="span6 offset3">
+		<%= form_tag({ controller: :movies, action: :new }, method: :get) do %>
+			<%= render 'fetch_field' %>
+		<% end %>
+		
 		<%= form_for @movie, html: { autocomplete: :off } do |f| %>
 			<%= render 'fields', f: f %>
 		    <%= f.submit "Create new movie", class: "btn btn-primary" %>

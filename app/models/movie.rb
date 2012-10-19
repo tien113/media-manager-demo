@@ -14,7 +14,7 @@ class Movie < ActiveRecord::Base
   validates :rating           , numericality: true, length: 1..3
   validates :resolution       , length: 0..10
   validates :genre            , length: 1..40
-  validates :imdb_url         , length: 1..40,
+  validates :imdb_url         , length: 1..50,
                                 format: URI::regexp(%w(http https)),
                                 uniqueness: { case_sensitive: false }
   validates :image_url        , length: 1..255,

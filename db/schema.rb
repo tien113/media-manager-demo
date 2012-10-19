@@ -15,7 +15,6 @@ ActiveRecord::Schema.define(:version => 20121012174650) do
 
   create_table "movies", :force => true do |t|
     t.string   "title"
-    t.string   "original_title"
     t.integer  "year"
     t.decimal  "rating",         :precision => 2, :scale => 1
     t.string   "resolution"
