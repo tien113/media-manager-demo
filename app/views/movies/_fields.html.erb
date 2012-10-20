@@ -2,15 +2,15 @@
 		
 <%= f.text_field :title, 		 { placeholder: "Title",     value: @movie.title } %>
 
-<%= f.text_field :year, 		 { placeholder: "Year",      value: @movie.year } %>
+<%= f.number_field :year, 		 { placeholder: "Year",      value: @movie.year } %>
 
-<%= f.text_field :rating, 		 { placeholder: "Rating",    value: @movie.rating } %>
+<%= f.number_field :rating, 	 { placeholder: "Rating",    value: @movie.rating } %>
 
 <%= f.text_field :genre, 	     { placeholder: "Genre",     value: @movie.genre } %>
 
-<%= f.text_field :imdb_url, 	 { placeholder: "IMDb URL",  value: @movie.imdb_url } %>
+<%= f.url_field :imdb_url, 		 { placeholder: "IMDb URL",  value: @movie.imdb_url } %>
 
-<%= f.text_field :image_url, 	 { placeholder: "Image URL", value: @movie.image_url } %>
+<%= f.url_field :image_url, 	 { placeholder: "Image URL", value: @movie.image_url } %>
 
 <%= f.select(:storage, storages, { include_blank: true, prompt: "Select Storage" }, { class: "span4" }) %>
 
