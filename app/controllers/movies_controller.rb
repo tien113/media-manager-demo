@@ -53,9 +53,8 @@ class MoviesController < ApplicationController
   
   private
     def fetch
-      imdb_url = params[:imdb_url]
-      if validate_imdb_url?(imdb_url)
-        @imovie = Imdb::Movie.new(imdb_id(imdb_url))
+      if validate_imdb_url?(params[:imdb_url])
+        @imovie = Imdb::Movie.new(imdb_id(params[:imdb_url]))
         @movie.title     = @imovie.title
         @movie.year      = @imovie.year
         @movie.rating    = @imovie.rating
