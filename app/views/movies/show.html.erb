@@ -9,7 +9,12 @@
 		<dl class="dl-horizontal">
 			<dt>Title</dt>
 			<dd><%= @movie.title %></dd>
-	
+			
+		<% if @movie.english_title != nil && @movie.english_title != '' %>	
+			<dt>English title</dt>
+			<dd><%= @movie.english_title %></dd>
+		<% end %>
+			
 			<dt>Year</dt>
 			<dd><%= @movie.year %></dd>
 			
@@ -25,19 +30,19 @@
 			<dt>Image URL</dt>
 			<dd><%= truncate(@movie.image_url, :length => 40)  %></dd>
 			
-		<% if @movie.resolution != "" %>
+		<% if @movie.resolution != '' %>
 			<dt>Resolution</dt>
 			<dd><%= @movie.resolution %></dd>
 		<% end %>
 			
-		<% if @movie.storage != "" %>
+		<% if @movie.storage != '' %>
 			<dt>Storage</dt>
 			<dd><%= @movie.storage %></dd>
 		<% end %>
 			
 			<dt>Watched</dt>
 			<dd>
-				<% if @movie.watched == true %>
+				<% if @movie.watched %>
 					<%= label_tag 'Yes' %>
 				<% else %>
 					<%= label_tag 'No' %>

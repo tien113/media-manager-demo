@@ -34,7 +34,7 @@ private
   end
   
   def searchable_columns
-    c = %w[title genre]
+    c = %w[title english_title genre]
   end
   
   def movies
