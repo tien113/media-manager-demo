@@ -65,7 +65,7 @@ class MoviesController < ApplicationController
     end
     
     def validate_imdb_url?(url)
-      if url != nil && url.include?('http://www.imdb.com/title/tt') && url.size == 36
+      if url.include?('http://www.imdb.com/title/tt') && url.size == 36
         return true
       else
         return false
